@@ -1,0 +1,65 @@
+Options -Indexes
+
+RewriteEngine on
+
+# ErrorDocument 404 /app/controller/error.php
+
+# Site
+RewriteRule ^$ app/controller/siteController.php?action=home [QSA,L]
+RewriteRule ^about-us/?$ app/controller/siteController.php?action=aboutus [QSA,L]
+RewriteRule ^categories/?$ app/controller/siteController.php?action=categories [QSA,L]
+RewriteRule ^signin/?$ app/controller/siteController.php?action=signin [QSA,L]
+RewriteRule ^admin-signin/?$ app/controller/siteController.php?action=adminSignin [QSA,L]
+RewriteRule ^signup/?$ app/controller/siteController.php?action=signup [QSA,L]
+RewriteRule ^signup/create/?$ app/controller/siteController.php?action=createAccount [QSA,L]
+RewriteRule ^login/process/?$ app/controller/siteController.php?action=processLogin [QSA,L]
+RewriteRule ^login/processadmin/?$ app/controller/siteController.php?action=processadminLogin [QSA,L]
+RewriteRule ^logout/process/?$ app/controller/siteController.php?action=processLogout [QSA,L]
+RewriteRule ^addcat/?$ app/controller/siteController.php?action=addCat [QSA,L]
+RewriteRule ^account/?$ app/controller/siteController.php?action=viewAccount [QSA,L]
+RewriteRule ^editaccount/userid=(\d+)/?$ app/controller/siteController.php?action=editAccount&userid=$1 [QSA,L]
+RewriteRule ^editpassword/userid=(\d+)/?$ app/controller/siteController.php?action=editPassword&userid=$1 [QSA,L]
+RewriteRule ^editpassword/process/userid=(\d+)/?$ app/controller/siteController.php?action=editPasswordProcess&userid=$1 [QSA,L]
+RewriteRule ^editaccount/process/userid=(\d+)/?$ app/controller/siteController.php?action=editAccountProcess&userid=$1 [QSA,L]
+
+RewriteRule ^addcat/process/?$ app/controller/siteController.php?action=addCatProcess [QSA,L]
+RewriteRule ^placesAutocomplete/?$ app/controller/siteController.php?action=placesAutocomplete [QSA,L]
+RewriteRule ^editUser/?$ app/controller/siteController.php?action=edituser [QSA,L]
+RewriteRule ^editUser/userupdate/?$ app/controller/siteController.php?action=userupdate [QSA,L]
+RewriteRule ^userupdate/?$ app/controller/siteController.php?action=userupdate [QSA,L]
+RewriteRule ^editUser/page(\d+)/?$ app/controller/siteController.php?action=edituser&page=$1 [QSA,L]
+RewriteRule ^people/?$ app/controller/siteController.php?action=findpeople [QSA,L]
+RewriteRule ^connections/?$ app/controller/siteController.php?action=connections [QSA,L]
+RewriteRule ^user/follow/?$ app/controller/siteController.php?action=follow [QSA,L]
+RewriteRule ^usersearch/?$ app/controller/siteController.php?action=userSearch [QSA,L]
+RewriteRule ^usersAutocomplete/?$ app/controller/siteController.php?action=usersAutocomplete [QSA,L]
+RewriteRule ^Connections/?$ app/controller/siteController.php?action=Connections [QSA,L]
+RewriteRule ^categories/vizData/?$ app/controller/siteController.php?action=categoriesData [QSA,L]
+
+# Deals
+
+RewriteRule ^deals/?$ app/controller/dealController.php?action=deals [QSA,L]
+RewriteRule ^offlinedeals/?$ app/controller/dealController.php?action=offlineDeals [QSA,L]
+RewriteRule ^onlinedeals/?$ app/controller/dealController.php?action=onlineDeals [QSA,L]
+
+RewriteRule ^adddeal/?$ app/controller/dealController.php?action=addDeal [QSA,L]
+RewriteRule ^viewdeal/dealid=(\d+)/?$ app/controller/dealController.php?action=viewDeal&dealid=$1 [QSA,L]
+RewriteRule ^writereview/dealid=(\d+)/?$ app/controller/dealController.php?action=writeReview&dealid=$1 [QSA,L]
+RewriteRule ^editdeal/dealid=(\d+)/?$ app/controller/dealController.php?action=editDeal&dealid=$1 [QSA,L]
+RewriteRule ^deletedeal/dealid=(\d+)/?$ app/controller/dealController.php?action=deleteDeal&dealid=$1 [QSA,L]
+
+RewriteRule ^adddeal/process/?$ app/controller/dealController.php?action=addDealProcess [QSA,L]
+RewriteRule ^editdeal/process/dealid=(\d+)/?$ app/controller/dealController.php?action=editDealProcess&dealid=$1 [QSA,L]
+RewriteRule ^writereview/process/dealid=(\d+)/?$ app/controller/dealController.php?action=writeReviewProcess&dealid=$1 [QSA,L]
+
+RewriteRule ^deal/filter/?$ app/controller/dealController.php?action=filterDeals [QSA,L]
+RewriteRule ^addWishlist/?$ app/controller/dealController.php?action=addWishlist [QSA,L]
+RewriteRule ^wishlist/?$ app/controller/dealController.php?action=wishlist [QSA,L]
+RewriteRule ^removeWishlist/dealid=(\d+)/?$ app/controller/dealController.php?action=removeWishlist&dealid=$1 [QSA,L]
+RewriteRule ^suggestFriend/?$ app/controller/dealController.php?action=suggestFriend [QSA,L]
+RewriteRule ^deals/vizData/category=(\w+)/?$ app/controller/dealController.php?action=dealData&category=$1 [QSA,L]
+RewriteRule ^dealviz/adddeal/process/?$ app/controller/dealController.php?action=vdealaddProcess [QSA,L]
+RewriteRule ^dealviz/editdeal/process/?$ app/controller/dealController.php?action=vdealeditProcess [QSA,L]
+RewriteRule ^dealviz/deldeal/process/?$ app/controller/dealController.php?action=vdealdelProcess [QSA,L]
+RewriteRule ^getReviews/?$ app/controller/dealController.php?action=getReviews [QSA,L]
+RewriteRule ^editreview/process/dealid=(\d+)/?$ app/controller/dealController.php?action=editReview&dealid=$1 [QSA,L]
